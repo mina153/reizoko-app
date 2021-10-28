@@ -1,0 +1,79 @@
+<div class="contents row">
+  <div class="AccountPage">
+    <div class="Account__info">
+    
+        <h1>MyPage</h1>
+      
+    
+      <div class="Account_link">
+          <% if user_signed_in? %>
+            
+              <%= link_to '⇨ Logout', destroy_user_session_path, method: :delete, class: "logout" %>
+            
+          <% else %>
+            <ul>
+            <li><%= link_to '⇩ Login', new_user_session_path, class: "login" %></li>
+            <li><%= link_to '⇩ New Registration', new_user_registration_path, class: "sign-up" %></li>
+            </ul>
+          <% end %>
+      </div>
+
+    </div>
+  
+    <div class='item1-contents'>
+      <div class="item_＿info">
+        <h3>  Welcome back , <b><%= link_to current_user.nickname, "#" %></b> ! </h3>
+
+      </div>
+      
+      <div class = "list">
+        <% @items.each do |item| %>
+          
+
+          <% if current_user == item.user %> 
+
+            <div class = "listlistlist">
+
+              <ul class= "list-list"> 
+                <li class='show-list'>  
+                  <div class='item-info'>
+                    <h3 class='item-name'>
+                      <%= link_to item.thing,item_path(item.id), method: :get %>
+                    </h3>
+                    <%=  item.category.name  %> 
+                  </div>   
+                </li>
+              </ul>
+
+              <ul class="more_list">
+                <% if user_signed_in? %>          
+                  <% if current_user == item.user %>  
+                    <div class = "edit1-destroy1">
+                      <%= link_to "📝", edit_item_path(item.id), method: :get, class: "item-edit" %> or <%= link_to "❌", item_path(item.id), method: :delete, class:"item-destroy" %>
+                    </div>
+                  <% end %> 
+                <% end %> 
+              </ul>  
+
+            </div>
+            
+        
+
+          <% end %>  
+      
+        <% end %> 
+ 
+         
+      </div>
+      
+      <div class="new-button">
+        <%= link_to "+ NEW", new_item_path%>
+      </div>
+    </div>
+  
+    
+  
+  </div>
+
+
+</div>

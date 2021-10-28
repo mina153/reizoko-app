@@ -1,0 +1,39 @@
+.detail-table{
+  text-align: center;
+  border: gainsboro 1px solid;
+  padding: 15px;
+}
+
+.detail-table {
+  margin-bottom: 30px;
+  width: 50%;
+  height: 50%;
+}
+
+.detail-item {
+  width: 30%;
+  background-color: #eee;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+}
+
+.detail-value {
+  width: 70%;
+  padding: 20px;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+}
+
+
+table{
+  margin: 0 auto;
+}
+.item{
+  text-align: center;
+  margin: 30px;
+}
+.edit-destroy{
+  text-align: center;
+}
