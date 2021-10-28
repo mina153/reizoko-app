@@ -1,0 +1,30 @@
+.item1-contents{
+  text-align: center;
+  margin: 0 auto;
+}
+
+.list-list{
+  display: flex; 
+}
+
+.show-list{
+  margin: 10px auto;
+}
+.edit1-destroy1{
+  margin: 0 auto;
+}
+
+.listlistlist{
+  border: solid 1px black;
+  margin: 10px auto;
+  width: 50%;
+}
+
+.new-button{
+  text-align: center;
+  margin: 20px;
+  border: 1px solid black;
+  background-color: gainsboro;
+  display: inline-block;
+  padding: 5px;
+}

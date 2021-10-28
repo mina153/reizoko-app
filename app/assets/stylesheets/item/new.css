@@ -1,0 +1,41 @@
+.post{
+  text-align: center;
+}
+.items{
+  display: flex;
+  margin: 15px auto;
+  text-align: center;
+  padding: 15px;
+  border: gainsboro solid 1px;
+}
+
+.items-thing,
+.select-category, 
+.select-date, 
+.items-collection,
+.items-date,
+.items-text{
+  padding: 15px;
+  margin: 0 0 0 50px;
+  width: 50%;
+}
+
+.items-collection {
+  margin: 15px;
+}
+
+.new-items{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.weight-bold-text{
+  border-right: 1px solid #ccc;
+  padding: 10px;
+  width: 40%;
+}
+
+.items-btn-contents{
+  text-align: center;
+  margin: 30px;
+}
