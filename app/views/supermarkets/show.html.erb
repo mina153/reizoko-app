@@ -1,0 +1,50 @@
+<%= render "shared/header" %>
+
+<div class="item-show">
+  <div class="item-box">
+
+    <div class= "Account__info">
+    
+       <h1>DETAIL</h1>
+
+      <div class="Account_link">
+        <%=link_to '⇨ back to SupermarketPage', supermarkets_path(current_user), class:"share4" %>
+      </div>
+
+    </div>
+
+
+
+    <div class="item">
+      <div class = item-title><h2><%= @supermarket.market %></h2></div>
+    </div>
+  
+
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">Market_URL</th>
+          <td class="detail-value"><%= @supermarket.market_url %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">Explanation</th>
+          <td class="detail-value"><%= @supermarket.detail %></td>
+        </tr>
+      </tbody>
+    </table>
+   
+        
+    <div class= edit-destroy>
+      <% if user_signed_in? %>  
+        <% if current_user== @supermarket.user %>
+          <div class = "edit1-destroy1">
+            <%= link_to "📝", edit_supermarket_path(@supermarket.id), method: :get, class: "item-edit" %>  or <%= link_to "❌", supermarket_path(@supermarket.id), method: :delete, class:"item-destroy" %>
+          </div>
+        <% end %> 
+      <% end %>       
+    </div>
+
+  
+
+  </div>
+</div>

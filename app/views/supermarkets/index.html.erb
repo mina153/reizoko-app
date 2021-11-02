@@ -1,0 +1,66 @@
+<%= render "shared/header" %>
+
+<div class="contents row">
+  <div class="AccountPage">
+    <div class="Account__info">
+    
+        <h1>SupermarketPage</h1>
+    
+    </div>
+  
+    <div class='item1-contents'>
+      <div class="item_＿info">
+        <h3> 🖌👀 Check <b><%= link_to current_user.nickname, "#" %></b>'s favorite Supermarket 👀✒️ </h3>
+      </div>
+      
+      <div class = "list">
+        <% @supermarkets.each do |supermarket| %>
+          
+
+          <% if current_user == supermarket.user %> 
+
+            <div class = "listlistlist">
+
+              <ul class= "list-list"> 
+                <li class='show-list'>  
+                  <div class='item-info'>
+                    <h3 class='item-name'>
+                      <%= link_to supermarket.market, supermarket_path(supermarket.id), method: :get %>
+                    </h3>
+                      <%= supermarket.market_url  %> 
+                  </div>   
+                </li>
+              </ul>
+
+              <ul class="more_list">
+                <% if user_signed_in? %>          
+                  <% if current_user == supermarket.user %>  
+                    <div class = "edit1-destroy1">
+                      <%= link_to "📝", edit_supermarket_path(supermarket.id), method: :get, class: "item-edit" %> or <%= link_to "❌", supermarket_path(supermarket.id), method: :delete, class:"item-destroy" %>
+                    </div>
+                  <% end %> 
+                <% end %> 
+              </ul>  
+
+            </div>
+            
+        
+
+          <% end %>  
+      
+        <% end %> 
+ 
+         
+      </div>
+      
+      <div class="new-button">
+        <%= link_to "+ Add Favorite Supermarket 🍥🥩", new_supermarket_path%>
+      </div>
+    </div>
+  
+    
+  
+  </div>
+
+
+</div>
