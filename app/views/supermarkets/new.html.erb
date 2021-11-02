@@ -1,0 +1,59 @@
+<div class="items-contents">
+
+  <div class="items-main">
+
+    <div class= "Account__info">
+
+      <h1>Fill in 🥦</h1>
+
+      <div class="Account_link">
+        <%=link_to '⇨ back to SupermarketPage', supermarkets_path(current_user), class:"share4" %>
+      </div>
+
+    </div>
+
+
+
+
+    <%= form_with model: @supermarket , local: true do |f| %>
+    
+    <%# エラー表示 %>
+      <%= render 'layouts/error_messages', model: f.object %> 
+    <%# /エラー表示 %>
+     
+      <div class="new-items">
+          <h3>< Tell about your favorite Supermarket ></h3>
+        <div class = "post">
+          <div class="items">
+            <div class="weight-bold-text">
+              <strong>* Supermarket_Name</strong>
+              <span class="indispensable"> <br><em>necessary / 20 characters maximum </em><br/></em><br/> </span>
+            </div>
+            <%= f.text_area :market, class:"items-thing", id:"item-thing", placeholder:" Necessary, please fill out" %>
+          </div>
+          <div class="items">
+            <div class="weight-bold-text">
+              <strong>* Supermarket_URL</strong>
+            </div>
+           <%= f.text_area :market_url, class:"items-thing", id:"item-thing", placeholder:"If you know the URL of the market, please fill it out" %>
+          </div>
+          <div class="items">
+            <div class="weight-bold-text">
+              <strong>* Explanation</strong>
+              <br><em> 100 characters maximum </em><br />
+            </div>
+            <%= f.text_area :detail, class:"items-text", id:"item-explanation", placeholder:"Optional" %>
+          </div>
+        </div>
+       
+      </div>
+
+      <%# 下部ボタン %>
+      <div class="items-btn-contents">
+          <%= f.submit "+++ Add Supermarket " ,class:"new-item-btn" %>
+      </div>
+      <%# /下部ボタン %>
+    
+    <% end %>
+  </div>
+</div>
