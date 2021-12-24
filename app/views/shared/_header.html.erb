@@ -7,11 +7,11 @@
     <%# </ul> %> 
     <ul class='lists-right'>
       <% if user_signed_in? %>
-        <p><%= link_to current_user.nickname, "#", class: "user-nickname" %></p> 
+        <h6><%=  current_user.nickname %> 's Page</h6> 
         <p><%= link_to 'LogOUT', destroy_user_session_path, method: :delete, class: "logout" %></p> 
         <p><%= link_to 'Supermarket', supermarkets_path, class: "supermarket" %></p>  
-        <p><%= link_to 'Mypage', items_path, class: "mypage" %></p> 
-        <%# <li><%= link_to 'WantedList', destroy_user_session_path, method: :delete, class: "wanted" %></li> 
+        <p><%= link_to 'ExistList', items_path, class: "mypage" %></p> 
+        <p><%= link_to 'WishList', wants_path, class: "wanted" %></li> 
         <%# <li><%= link_to 'Category', destroy_user_session_path, method: :delete, class: "category" %></li>  
       <% end %>
     </ul>

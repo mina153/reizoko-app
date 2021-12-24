@@ -1,0 +1,51 @@
+<%= render "shared/header" %>
+
+<div class="item-show">
+  <div class="item-box">
+
+    <div class= "Account__info">
+    
+       <h1>DETAIL Of WishList</h1>
+
+      <div class="Account_link">
+        <%=link_to '⇨ back to WantPage', wants_path(current_user), class:"share4" %>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class = item-title><h2><%= @want.wanted %></h2></div>
+    </div>
+  
+
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">Category</th>
+          <td class="detail-value"><%= @want.categori.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">Explanation</th>
+          <td class="detail-value"><%= @want.account %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">Supermarket</th>
+          <td class="detail-value"><%= link_to  @want.supermarket.market, supermarket_path(@want.supermarket_id)%></td>
+        </tr>
+      </tbody>
+    </table>
+   
+        
+    <div class= edit-destroy>
+      <% if user_signed_in? %>  
+        <% if current_user== @want.user %>
+          <div class = "edit1-destroy1">
+            <%= link_to "📝", edit_want_path(@want.id), method: :get, class: "item-edit" %>  or <%= link_to "❌", want_path(@want.id), method: :delete, class:"item-destroy" %>
+          </div>
+        <% end %> 
+      <% end %>       
+    </div>
+
+  
+
+  </div>
+</div>

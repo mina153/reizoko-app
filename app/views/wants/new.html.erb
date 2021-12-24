@@ -1,0 +1,87 @@
+<div class="items-contents">
+
+  <div class="items-main">
+
+    <div class= "Account__info">
+
+      <h1>Fill in WishList🐣</h1>
+
+      <div class="Account_link">
+        <%=link_to '⇨ back to WantPage', wants_path(current_user), class:"share4" %>
+      </div>
+
+    </div>
+
+
+
+
+    <%= form_with model: @want , local: true do |f| %>
+    
+    <%# エラー表示 %>
+      <%= render 'layouts/error_messages', model: f.object %> 
+    <%# /エラー表示 %>
+     
+      <div class="new-items">
+          <h3>< Tell about food you wanna buy ></h3>
+        <div class = "post">
+
+          <div class="items">
+            <div class="weight-bold-text">
+              <strong>* Food</strong>
+              <span class="indispensable"> <br><em>necessary  </em><br/></em><br/> </span>
+            </div>
+            <%= f.text_area :wanted, class:"items-thing", id:"item-thing", placeholder:"Plase fill out" %>
+          </div>
+
+          <div class="items">
+            <div class="weight-bold-text">
+              <strong>* Category</strong>
+              <span class="indispensable"> <br><em>necessary</em><br/> </span>
+            </div>
+            <div class = "select-category">
+              <%= f.collection_select(:categori_id, Categori.all, :id, :name, {}, {class:"items-collection", id:"item-prefecture"}) %>
+            </div>
+          </div>
+
+          <div class="items">
+            <div class="weight-bold-text">
+              <strong>* Explanation</strong>
+              <br><em> 100 characters maximum </em><br />
+            </div>
+            <%= f.text_area :account, class:"items-text", id:"item-explanation", placeholder:"Please fill out" %>
+          </div>
+
+          <div class="items">
+            <div class="weight-bold-text">
+              <strong>* Supermarket</strong>
+              <span class="indispensable"><br><em>necessary</em><br/></span>
+            </div>
+            <div class = "weight-bold-text">
+              <select name="want[supermarket_id]"> 
+                <option>Please select the supermarket</option>
+                  <% Supermarket.all.each do |supermarket| %>
+                    <% if current_user == supermarket.user %> 
+                      <option value=<%= supermarket.id %>><%= supermarket.market %></option>
+                    <% end%> 
+                  <% end %>
+              </select> 
+              <div class="attention">
+                ❗️ First, select the supermarket ❗️
+              </div>
+                  
+            </div>
+
+          </div>
+        </div>
+       
+      </div>
+
+      <%# 下部ボタン %>
+      <div class="items-btn-contents">
+          <%= f.submit "+++ Make a WishList" ,class:"new-item-btn" %>
+      </div>
+      <%# /下部ボタン %>
+    
+    <% end %>
+  </div>
+</div>

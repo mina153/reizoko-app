@@ -41,9 +41,7 @@
 |------------------------|------------|----------------------------- |
 | wanted                 | string     | null:false                   |
 | account(説明)           | text       |                              |
-| super                  | string     | null:false,foreign_key: true |
-| super_url              | string     |                              |
-| categori               | integer    | null:false,foreign_key: true |  
+| categori_id            | integer    | null:false                   |  
 | user                   | references | null:false,foreign_key: true |
 | supermarket            | references | null:false,foreign_key: true |
 

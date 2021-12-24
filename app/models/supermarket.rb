@@ -4,4 +4,5 @@ class Supermarket < ApplicationRecord
   validates :detail, length: { maximum: 100}
 
   belongs_to :user
+  has_many :wants
 end
