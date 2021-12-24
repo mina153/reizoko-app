@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root  'users#index'
   resources :items
   resources :supermarkets
+  resources :wants
 end
 
 

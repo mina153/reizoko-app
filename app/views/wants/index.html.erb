@@ -1,0 +1,67 @@
+
+<%= render "shared/header" %>
+
+<div class="contents row">
+  <div class="AccountPage">
+    <div class="Account__info">
+    
+        <h1>WishPage</h1>
+    
+    </div>
+  
+    <div class='item1-contents'>
+      <div class="item_＿info">
+        <h3> 🖌👀 Check the things that <b><%= link_to current_user.nickname, "#" %></b> should buy at the shop 👀✒️ </h3>
+      </div>
+      
+      <div class = "list">
+        <% @wants.each do |want| %>
+          
+
+          <% if current_user == want.user %> 
+
+            <div class = "listlistlist">
+
+              <ul class= "list-list"> 
+                <li class='show-list'>  
+                  <div class='item-info'>
+                    <h3 class='item-name'>
+                      <%= link_to want.wanted, want_path(want.id), method: :get %>
+                    </h3>
+                      <%= want.categori.name %> 
+                  </div>   
+                </li>
+              </ul>
+
+              <ul class="more_list">
+                <% if user_signed_in? %>          
+                  <% if current_user == want.user %>  
+                    <div class = "edit1-destroy1">
+                      <%= link_to "📝", edit_want_path(want.id), method: :get, class: "item-edit" %> or <%= link_to "❌", want_path(want.id), method: :delete, class:"item-destroy" %>
+                    </div>
+                  <% end %> 
+                <% end %> 
+              </ul>  
+
+            </div>
+            
+        
+
+          <% end %>  
+      
+        <% end %> 
+ 
+         
+      </div>
+      
+      <div class="new-button">
+        <%= link_to "+  Make a note of what you want" , new_want_path%>
+      </div>
+    </div>
+  
+    
+  
+  </div>
+
+
+</div>
