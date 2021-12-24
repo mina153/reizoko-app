@@ -8,10 +8,10 @@
     <ul class='lists-right'>
       <% if user_signed_in? %>
         <h6><%=  current_user.nickname %> 's Page</h6> 
-        <p><%= link_to 'LogOUT', destroy_user_session_path, method: :delete, class: "logout" %></p> 
-        <p><%= link_to 'Supermarket', supermarkets_path, class: "supermarket" %></p>  
-        <p><%= link_to 'ExistList', items_path, class: "mypage" %></p> 
-        <p><%= link_to 'WishList', wants_path, class: "wanted" %></li> 
+        <div class= "Logout"><%= link_to 'LogOUT', destroy_user_session_path, method: :delete, class: "logout" %></div> 
+        <div class= "Supermarket"><%= link_to 'SupermarketList', supermarkets_path, class: "supermarket" %></div>  
+        <div class= "Exist"><%= link_to 'ExistList', items_path, class: "exist" %></div> 
+        <div class= "Wish"><%= link_to 'WishList', wants_path, class: "wish" %></div> 
         <%# <li><%= link_to 'Category', destroy_user_session_path, method: :delete, class: "category" %></li>  
       <% end %>
     </ul>

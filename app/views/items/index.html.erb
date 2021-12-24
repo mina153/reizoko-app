@@ -1,24 +1,11 @@
 <%= render "shared/header" %>
 
-<div class="contents row">
+<div class="items-contents">
   <div class="AccountPage">
     <div class="Account__info">
     
         <h1>ExistList</h1>
-      
-    
-      <div class="Account_link">
-          <% if user_signed_in? %>
-            
-              <%= link_to '⇨ Logout', destroy_user_session_path, method: :delete, class: "logout" %>
-            
-          <% else %>
-            <ul>
-            <li><%= link_to '⇩ Login', new_user_session_path, class: "login" %></li>
-            <li><%= link_to '⇩ New Registration', new_user_registration_path, class: "sign-up" %></li>
-            </ul>
-          <% end %>
-      </div>
+   
 
     </div>
   
@@ -69,7 +56,7 @@
       </div>
       
       <div class="new-button">
-        <%= link_to "+ NEW a ExistList", new_item_path%>
+        <%= link_to "+ Add a ExistList", new_item_path%>
       </div>
     </div>
   
