@@ -7,4 +7,45 @@ h6{
 
 .lists-right{
   text-align: center;
+  margin: 50px 50px 0 50px;
+}
+
+.Logout{
+  margin-bottom: 10px;
+}
+
+.logout{
+  border: black 1px solid;
+  padding: 5px;
+  background-color:slategrey;
+}
+
+.Supermarket{
+  margin-bottom: 10px;
+}
+
+.supermarket{
+  border: black 1px solid;
+  padding: 5px;
+  background-color:powderblue;
+}
+
+.Exist{
+  margin-bottom: 10px;
+}
+
+.exist{
+  border: black 1px solid;
+  padding: 5px;
+  background-color:sandybrown;
+}
+
+.Wish{
+  margin-bottom: 10px;
+}
+
+.wish{
+  border: black 1px solid;
+  padding: 5px;
+  background-color: plum;
 }
