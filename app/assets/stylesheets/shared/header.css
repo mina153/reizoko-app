@@ -7,7 +7,7 @@ h6{
 
 .lists-right{
   text-align: center;
-  margin: 50px 50px 0 50px;
+  margin: 50px 50px 30px 50px ;
 }
 
 .Logout{
@@ -48,4 +48,10 @@ h6{
   border: black 1px solid;
   padding: 5px;
   background-color: plum;
+}
+
+.category{
+  border: black 1px solid;
+  padding: 5px;
+  background-color:lightsteelblue;
 }

@@ -1,0 +1,92 @@
+<%= render "shared/header" %>
+
+<div class="list-contents">
+  <div class="AccountPage">
+    <div class="Account__info">
+    
+        <h1>ListPage</h1>
+    
+    </div>
+  
+    <div class='item1-contents'>
+      <div class="item_＿info">
+        <h3> Exist  : 🌝  /  Wish  : 🌚 </h3>
+      </div>
+      
+      <div class = "list">
+        <% @items.each do |item| %>
+          <% if current_user == item.user %> 
+            <div class = "listlistlist-item">
+
+              <ul class= "list-list"> 
+                <li class='show-list'>  
+                  <div class='item-info'>
+                    <h3 class='item-name'>
+                      🌝<%= link_to item.thing, item_path(item.id), method: :get %>
+                    </h3>
+                      <%= item.category.name %> 
+                  </div>   
+                </li>
+              </ul>
+
+              <ul class="more_list">
+                <% if user_signed_in? %>          
+                  <% if current_user == item.user %>  
+                    <div class = "edit1-destroy1">
+                      <%= link_to "📝", edit_item_path(item.id), method: :get, class: "item-edit" %> or <%= link_to "❌", item_path(item.id), method: :delete, class:"item-destroy" %>
+                    </div>
+                  <% end %> 
+                <% end %> 
+              </ul>  
+
+            </div>
+          <% end %>  
+        <% end %> 
+      </div>
+
+
+      <div class = "list">
+        <% @wants.each do |want| %>
+          <% if current_user == want.user %> 
+            <div class = "listlistlist-want">
+
+              <ul class= "list-list"> 
+                <li class='show-list'>  
+                  <div class='item-info'>
+                    <h3 class='item-name'>
+                      🌚<%= link_to want.wanted, want_path(want.id), method: :get %>
+                    </h3>
+                      <%= want.categori.name %> 
+                  </div>   
+                </li>
+              </ul>
+
+              <ul class="more_list">
+                <% if user_signed_in? %>          
+                  <% if current_user == want.user %>  
+                    <div class = "edit1-destroy1">
+                      <%= link_to "📝", edit_want_path(want.id), method: :get, class: "item-edit" %> or <%= link_to "❌", want_path(want.id), method: :delete, class:"item-destroy" %>
+                    </div>
+                  <% end %> 
+                <% end %> 
+              </ul>  
+
+            </div>
+          <% end %>  
+        <% end %>
+      </div>
+      
+      <div class="new-button">
+        <p><%= link_to "+ ExistList" , new_item_path, class: "new-button-exist-font"%>
+      </div>
+      <div class= "new-button">
+        <p><%= link_to "+ WishList" , new_want_path, class: "new-button-wish-font"%>
+      </div>
+    </div>
+  
+    
+  
+  </div>
+
+
+</div>
