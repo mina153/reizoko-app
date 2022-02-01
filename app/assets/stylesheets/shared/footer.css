@@ -1,0 +1,15 @@
+.top-footer{
+  color: blue;
+  font-size: large;
+  padding: 5px 10px;
+  margin: 30px 20px;
+  border: 1px solid black;
+  background:cornsilk;
+  /* 文字幅に揃えてboxを作る */ 
+  display:inline-block; 
+}
+
+.top-footer:hover{
+  border-radius: 70%;
+}
+

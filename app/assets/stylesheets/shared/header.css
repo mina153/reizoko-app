@@ -13,45 +13,55 @@ h6{
 .Logout{
   margin-bottom: 10px;
 }
+.Logout:hover{
+  opacity: 0.5;
+}
 
 .logout{
   border: black 1px solid;
   padding: 5px;
   background-color:slategrey;
+  text-decoration: none;
 }
 
 .Supermarket{
   margin-bottom: 10px;
+}
+.Supermarket:hover{
+  opacity: 0.5;
 }
 
 .supermarket{
   border: black 1px solid;
   padding: 5px;
   background-color:powderblue;
+  text-decoration: none;
 }
 
 .Exist{
   margin-bottom: 10px;
+}
+.Exist:hover{
+  opacity: 0.5;
 }
 
 .exist{
   border: black 1px solid;
   padding: 5px;
   background-color:sandybrown;
+  text-decoration: none;
 }
 
 .Wish{
   margin-bottom: 10px;
+}
+.Wish:hover{
+  opacity: 0.5;
 }
 
 .wish{
   border: black 1px solid;
   padding: 5px;
   background-color: plum;
-}
-
-.category{
-  border: black 1px solid;
-  padding: 5px;
-  background-color:lightsteelblue;
+  text-decoration: none;
 }
