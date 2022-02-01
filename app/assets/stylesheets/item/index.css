@@ -27,6 +27,14 @@
   background-color: gainsboro;
   display: inline-block;
   padding: 5px;
+  cursor: pointer;
+
+  transition-property: border-radius;
+  transition-duration: 0.2s;
+}
+.new-button:hover{
+  opacity: 0.5;
+  border-radius: 50%;
 }
 
 h1{

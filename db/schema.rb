@@ -10,18 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_25_115754) do
-
-  create_table "classifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "item_id", null: false
-    t.bigint "want_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["item_id"], name: "index_classifications_on_item_id"
-    t.index ["user_id"], name: "index_classifications_on_user_id"
-    t.index ["want_id"], name: "index_classifications_on_want_id"
-  end
+ActiveRecord::Schema.define(version: 2022_02_01_134811) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "thing", null: false
@@ -69,9 +58,6 @@ ActiveRecord::Schema.define(version: 2021_12_25_115754) do
     t.index ["user_id"], name: "index_wants_on_user_id"
   end
 
-  add_foreign_key "classifications", "items"
-  add_foreign_key "classifications", "users"
-  add_foreign_key "classifications", "wants"
   add_foreign_key "items", "users"
   add_foreign_key "supermarkets", "users"
   add_foreign_key "wants", "supermarkets"

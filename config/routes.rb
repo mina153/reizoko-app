@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :items
   resources :supermarkets
   resources :wants
-  resources :classifications
+  get 'classifications/search'
 end
 
 
