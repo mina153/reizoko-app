@@ -5,11 +5,8 @@
 
     <div class= "Account__info">
     
-       <h1>DETAIL</h1>
+       <h1 style='color:sandybrown;'>DETAIL</h1>
 
-      <div class="Account_link">
-        <%=link_to '⇨ back to ExistList', items_path(current_user), class:"share4" %>
-      </div>
 
     </div>
 
@@ -24,7 +21,13 @@
       <tbody>
         <tr>
           <th class="detail-item">Expiry Date</th>
-          <td class="detail-value"><%= @item.expiry %></td>
+          <td class="detail-value"><%= @item.expiry %>
+            <% if @item.expiry < Date.today then%>
+              <p style="color:red; margin:0;"> ＊＊＊ Expired ＊＊＊</p>
+            <% elsif @item.expiry == Date.today then%>
+              <p style="color:goldenrod; margin:0;"> ＊ until Today ＊</p>
+            <% end%>
+          </td>
         </tr>
         <tr>
           <th class="detail-item">Category</th>
@@ -49,6 +52,9 @@
     </div>
 
   
+      <div class="Account_link">
+        <%=link_to '⇨ back to ExistList', items_path(current_user), class:"share4" %>
+      </div>
 
   </div>
 </div>

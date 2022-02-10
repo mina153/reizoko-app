@@ -1,9 +1,18 @@
 <%= render "shared/header" %>
 
-<h1>Welcome back, <%= current_user.nickname %></h1>
+<div class='toppage' style='text-align:center;'>
+   
+  <h1>Welcome back, <%= current_user.nickname %></h1>
+  
+  <div style="text-align:center; ">((( Compatible with "iPhone X" and later❗️ )))</div>
+  <div class="box">
+  🥩🥦🍋
+  </div>
 
-<div class="box">
-🥩🥦🍋
+  <div class="top-image" style="display:flex;">
+    <%= image_tag "supermarket.png", class:"list-pict1" ,style:"border-radius: 50%;  width:50vw; height:40vh; "%>
+    <%= image_tag "cashier.png", class:"list-pict2" ,style:"border-radius: 50%;  width:50vw; height:40vh;"%>
+  </div>
 </div>
 
 

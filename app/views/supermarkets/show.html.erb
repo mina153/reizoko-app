@@ -5,11 +5,9 @@
 
     <div class= "Account__info">
     
-       <h1>DETAIL</h1>
+       <h1 style='color:powderblue;'>DETAIL</h1>
 
-      <div class="Account_link">
-        <%=link_to '⇨ back to SupermarketList', supermarkets_path(current_user), class:"share4" %>
-      </div>
+     
 
     </div>
 
@@ -20,7 +18,7 @@
     </div>
   
 
-    <table class="detail-table">
+    <table class="detail-table" >
       <tbody>
         <tr>
           <th class="detail-item">Market_URL</th>
@@ -38,13 +36,15 @@
       <% if user_signed_in? %>  
         <% if current_user== @supermarket.user %>
           <div class = "edit1-destroy1">
-            <%= link_to "📝", edit_supermarket_path(@supermarket.id), method: :get, class: "item-edit" %>  or <%= link_to "❌", supermarket_path(@supermarket.id), method: :delete, class:"item-destroy" %>
+            <%= link_to "📝", edit_supermarket_path(@supermarket.id), method: :get, class: "item-edit" %> 
           </div>
         <% end %> 
       <% end %>       
     </div>
 
- 
-  
+    <div class="Account_link">
+      <%=link_to '⇨ back to SupermarketList', supermarkets_path(current_user), class:"share4" %>
+    </div>
+
   </div>
 </div>

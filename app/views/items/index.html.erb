@@ -4,24 +4,24 @@
   <div class="AccountPage">
     <div class="Account__info">
     
-        <h1>ExistList</h1>
+        <h1 style='color:sandybrown;'>ExistList</h1>
    
 
     </div>
   
     <div class='item1-contents'>
       <div class="item_＿info">
-        <h3>  Welcome back , <b><%= link_to current_user.nickname, "#", class: "nickname" %></b> ! </h3>
+        <h3>  🍓🥐 Check  <b><%= link_to current_user.nickname, "#", class: "nickname" %></b>'s stored food ! 🍾🧀</h3>
 
       </div>
-      
+       
       <div class = "list">
         <% @items.each do |item| %>
           
 
           <% if current_user == item.user %> 
 
-            <div class = "listlistlist">
+            <div class = "listlistlist" style='background-color:sandybrown;'>
 
               <ul class= "list-list"> 
                 <li class='show-list'>  
@@ -29,7 +29,20 @@
                     <h3 class='item-name'>
                       <%= link_to item.thing,item_path(item.id), method: :get %>
                     </h3>
-                    <%=  item.category.name  %> 
+                    <p><%=  item.category.name  %></p>
+
+                      <% if item.expiry < Date.today then%>
+                        <p><%= item.expiry %>
+                          <span class="expired" style="color:white;">  Expired !!</span>
+                        </p>
+                      <% elsif item.expiry == Date.today then%>
+                        <p><%= item.expiry %>
+                        <span class="today" style="color:white;">＊ until Today ＊</span>
+                        </p>
+                      <% else %>
+                        <p><%= item.expiry %></p>
+                      <% end%>
+                    
                   </div>   
                 </li>
               </ul>
@@ -55,8 +68,8 @@
          
       </div>
       
-      <div class="new-button">
-        <%= link_to "+ Add a ExistList", new_item_path%>
+      <div class="new-button" style='border:1px solid #FF6633'>
+        <%= link_to "+ Add StoredFood 🍭🥖", new_item_path%>
       </div>
     </div>
     

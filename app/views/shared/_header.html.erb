@@ -5,6 +5,9 @@
       <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
       <%# <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
     <%# </ul> %> 
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
     <ul class='lists-right'>
       <% if user_signed_in? %>
         <h6><%= link_to current_user.nickname ,root_path%> 's Page</h6> 
@@ -17,7 +20,4 @@
    
   </div>
 
-    <div class="food-images">
-      <img src="../../banana.gif">
-    </div>
 </header>

@@ -4,7 +4,7 @@
 
     <div class= "Account__info">
 
-      <h1>EditPage_ExistList 📝</h1>
+      <h1 style='color:sandybrown;'>Edit ExistList 📝</h1>
 
       <div class="Account_link">
         <%=link_to '⇨ back to ExistList', items_path(current_user), class:"share4" %>
@@ -26,15 +26,14 @@
         <div class = "post">
           <div class="items">
             <div class="weight-bold-text">
-              <strong>* Title</strong>
-              <span class="indispensable"> <br><em>necessary / 10 characters maximum </em><br/></em><br/> </span>
+              <strong>* Food</strong>
+              <span class="indispensable"> <br><em>10 maximum </em><br/></em><br/> </span>
             </div>
             <%= f.text_area :thing, class:"items-thing", id:"item-thing", placeholder:"Plase fill out" %>
           </div>
           <div class="items">
             <div class="weight-bold-text">
               <strong>* Category</strong>
-              <span class="indispensable"> <br><em>necessary</em><br/> </span>
             </div>
             <div class = "select-category">
               <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"items-collection", id:"item-prefecture"}) %>
@@ -43,7 +42,6 @@
           <div class="items">
             <div class="weight-bold-text">
               <strong>* Expiry date</strong>
-              <span class="indispensable"> <br><em>necessary</em><br/> </span>
             </div>
             <div class = "select-date">
               <%= f.date_select :expiry, 
@@ -55,8 +53,8 @@
           </div>
           <div class="items">
             <div class="weight-bold-text">
-              <strong>* Explanation</strong>
-              <br><em> 100 characters maximum </em><br />
+              <strong>Explanation</strong>
+              <br><em> 100 maximum </em><br />
             </div>
             <%= f.text_area :explanation, class:"items-text", id:"item-explanation", placeholder:"Please fill out" %>
           </div>
@@ -65,8 +63,8 @@
       </div>
 
       <%# 下部ボタン %>
-      <div class="items-btn-contents">
-          <%= f.submit "+++ Update a list of things in the fridge " ,class:"new-item-btn" %>
+      <div class="items-btn-contents" >
+          <%= f.submit "+++ Update a list of things in the fridge " ,class:"new-item-btn" , style:'border:1px solid #FF6633'%>
       </div>
       <%# /下部ボタン %>
     
