@@ -65,3 +65,11 @@ h6{
   background-color: plum;
   text-decoration: none;
 }
+
+.top-page-header{
+  height: 40vh;
+}
+
+.nav{
+  vertical-align:middle;
+} 

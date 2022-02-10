@@ -5,11 +5,9 @@
 
     <div class= "Account__info">
     
-       <h1>DETAIL Of WishList</h1>
+       <h1 style='color:plum;'>DETAIL Of WishList</h1>
 
-      <div class="Account_link">
-        <%=link_to '⇨ back to WantPage', wants_path(current_user), class:"share4" %>
-      </div>
+      
     </div>
 
     <div class="item">
@@ -45,7 +43,9 @@
       <% end %>       
     </div>
 
-
+    <div class="Account_link">
+      <%=link_to '⇨ back to WantPage', wants_path(current_user), class:"share4" %>
+    </div>
 
   </div>
 </div>

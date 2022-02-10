@@ -4,7 +4,7 @@
 
     <div class= "Account__info">
 
-      <h1>EditPage_SupermarketList 📝</h1>
+      <h1 style='color:powderblue;'>Edit SupermarketList 📝</h1>
 
       <div class="Account_link">
         <%=link_to '⇨ back to SupermarketList', supermarkets_path(current_user), class:"share4" %>
@@ -28,19 +28,19 @@
           <div class="items">
             <div class="weight-bold-text">
               <strong>* Supermarket Name</strong>
-              <span class="indispensable"> <br><em>necessary / 20 characters maximum </em><br/></em><br/> </span>
+              <span class="indispensable"> <br><em>20 maximum </em><br/></em><br/> </span>
             </div>
             <%= f.text_area :market, class:"items-thing", id:"item-thing", placeholder:" Necessary, please fill out" %>
           </div>
           <div class="items">
             <div class="weight-bold-text">
-              <strong>* Supermarket URL</strong>
+              <strong>Supermarket URL</strong>
             </div>
            <%= f.text_area :market_url, class:"items-thing", id:"item-thing", placeholder:"If you know the URL of the market, please fill it out" %>
           </div>
           <div class="items">
             <div class="weight-bold-text">
-              <strong>* Explanation</strong>
+              <strong>Explanation</strong>
               <br><em> 100 characters maximum </em><br />
             </div>
             <%= f.text_area :detail, class:"items-text", id:"item-explanation", placeholder:"Optional" %>
@@ -50,8 +50,8 @@
       </div>
 
       <%# 下部ボタン %>
-      <div class="items-btn-contents">
-          <%= f.submit "+++ Update Supermarket " ,class:"new-item-btn" %>
+      <div class="items-btn-contents" >
+          <%= f.submit "+++ Update Supermarket " ,class:"new-item-btn" ,style:'border:1px solid blue'%>
       </div>
     
       <%# /下部ボタン %>

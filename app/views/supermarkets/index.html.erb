@@ -2,9 +2,11 @@
 
 <div class="supermarket-contents">
   <div class="AccountPage">
-    <div class="Account__info">
+    <div class="Account__info" >
     
-        <h1>SupermarketList</h1>
+        <h1 style='color:powderblue; '>
+          SupermarketList
+        </h1>
     
     </div>
   
@@ -19,7 +21,7 @@
 
           <% if current_user == supermarket.user %> 
 
-            <div class = "listlistlist">
+            <div class = "listlistlist" style='background-color:powderblue;'>
 
               <ul class= "list-list"> 
                 <li class='show-list'>  
@@ -36,7 +38,7 @@
                 <% if user_signed_in? %>          
                   <% if current_user == supermarket.user %>  
                     <div class = "edit1-destroy1">
-                      <%= link_to "📝", edit_supermarket_path(supermarket.id), method: :get, class: "item-edit" %> or <%= link_to "❌", supermarket_path(supermarket.id), method: :delete, class:"item-destroy" %>
+                      <%= link_to "📝", edit_supermarket_path(supermarket.id), method: :get, class: "item-edit" %> 
                     </div>
                   <% end %> 
                 <% end %> 
@@ -53,8 +55,8 @@
          
       </div>
       
-      <div class="new-button">
-        <%= link_to "+ Add Favorite Supermarket 🍥🥩", new_supermarket_path%>
+      <div class="new-button" style='border:1px solid blue'>
+        <%= link_to "+ Add Supermarket 💰🥩", new_supermarket_path%>
       </div>
     </div>
   
