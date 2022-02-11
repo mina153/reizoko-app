@@ -23,8 +23,7 @@ class Item < ApplicationRecord
   end
 
   def thing_large
-    return if thing.length<20
-
+    return if thing.length<=20
     errors.add(:base, "Food is too long (maximum is 20 characters)")
   end
 

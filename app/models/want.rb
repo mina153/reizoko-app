@@ -1,6 +1,7 @@
 class Want < ApplicationRecord
  
   validate :wanted_presence
+  validate :wanted_large
 
   # validates :categori_id, numericality: { other_than: 1 } 
   validate :categori_presence
@@ -20,6 +21,12 @@ class Want < ApplicationRecord
     return if wanted.present?
 
     errors.add(:base, "Food can't be blank")
+  end
+
+  def wanted_large
+    return if wanted.length<=20
+
+    errors.add(:base, "Food is too long (maximum is 20 characters)")
   end
 
 

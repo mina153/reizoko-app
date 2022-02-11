@@ -1,6 +1,6 @@
 class Supermarket < ApplicationRecord
   
-  validates :market, length: { maximum: 20 }
+  validate :market_large 
   validate :market_presence
 
   validates :detail, length: { maximum: 100}
@@ -13,9 +13,11 @@ class Supermarket < ApplicationRecord
 
   def market_presence
     return if market.present?
-
     errors.add(:base, "Supermarket name can't be blank")
   end
 
-
+  def market_large
+    return if market.length<=20
+    errors.add(:base, "Supermarket name is too long (maximum is 20 characters)")
+  end
 end
