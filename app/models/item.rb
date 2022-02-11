@@ -2,9 +2,9 @@ class Item < ApplicationRecord
   belongs_to :user
 
   validate :thing_presence
-  validates :thing,  length: { maximum: 20 }
+  validate :thing_large
 
-  validates :category_id, numericality: { other_than: 1 ,message: " can't be blank"} 
+  validates :category_id, numericality: { other_than: 1 ,message: "can't be blank"} 
 
   validate :expiry_presence
 
@@ -22,6 +22,11 @@ class Item < ApplicationRecord
     errors.add(:base, "Food can't be blank")
   end
 
+  def thing_large
+    return if thing.length<20
+
+    errors.add(:base, "Food is too long (maximum is 20 characters)")
+  end
 
   def expiry_presence
     return if expiry.present?
