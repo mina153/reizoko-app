@@ -1,5 +1,5 @@
 class SupermarketsController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!
   before_action :movement, only: [ :show, :edit, :update, :destroy]
   before_action :prohibit, only: [:edit, :update, :destroy]
 
