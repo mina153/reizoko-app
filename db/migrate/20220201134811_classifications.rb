@@ -3,3 +3,4 @@ class Classifications < ActiveRecord::Migration[6.0]
     drop_table :classifications
   end
 end
+
