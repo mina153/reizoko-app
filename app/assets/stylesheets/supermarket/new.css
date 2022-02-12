@@ -1,24 +1,19 @@
-.attention{
-  color: red;
-}
-
-.meal{
+.vegetable{
   width: 50px;
   line-height:50px;
-  background-color:brown;
+  background-color:peachpuff;
   vertical-align:middle;
   text-align:center;
   border-radius: 60%;
   margin: 15px;
-  opacity: 90%;
 
-  animation-name: meal;
+  animation-name: vege;
   animation-duration: 5s;
   animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
 }
 
-@keyframes meal{
+@keyframes vege{
   0%{
     transform:rotateY(0);
   }

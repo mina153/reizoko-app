@@ -4,7 +4,13 @@
 
     <div class= "Account__info">
 
-      <h1 style='color:powderblue;'>Fill in SupermarketList🥦</h1>
+      <div style="display:flex; justify-content: center;">
+        <b class='vegetable'>🥦</b>
+          <h1 style='color:powderblue; vertical-align:center;'>
+              Fill in SupermarketList
+          </h1>
+        <b class='vegetable'>🍅</b>
+      </div>
 
       <div class="Account_link">
         <%=link_to '⇨ back to SupermarketList', supermarkets_path(current_user), class:"share4" %>
@@ -16,7 +22,6 @@
 
 
     <%= form_with model: @supermarket , local: true do |f| %>
-    
     <%# エラー表示 %>
       <%= render 'layouts/error_messages', model: f.object %> 
     <%# /エラー表示 %>
