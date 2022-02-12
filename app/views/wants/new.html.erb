@@ -15,7 +15,7 @@
 
 
 
-    <%= form_with model: @want , local: true do |f| %>
+    <%= form_with model: @want, local: true do |f| %>
     
     <%# エラー表示 %>
       <%= render 'layouts/error_messages', model: f.object %> 
@@ -54,22 +54,24 @@
               <strong>* Supermarket</strong>
             </div>
             <div class = "weight-bold-text">
-              <% if Supermarket.present? %>
+              <% if current_user.supermarkets.present?%>
                 <select name="want[supermarket_id]"> 
                   <option>Please select the supermarket</option>
+              
                 
-                    <% Supermarket.all.each do |supermarket| %>
-                      <% if current_user == supermarket.user %> 
-                        <option value=<%= supermarket.id %>><%= supermarket.market %></option>
-                      <% end%> 
-                    <% end %>
-                </select> 
+                <% Supermarket.all.each do |supermarket| %>  
+                  <%if current_user==supermarket.user%>
+                    <option value=<%= supermarket.id %>><%= supermarket.market %></option>
+                  <% end%>
+                <% end %>
+                  
+                </select>   
               <% else %>
-                <div class="attention">
-                  <%=link_to '⇨ First, make SupermarketList❗️', new_supermarket_path %>
-                </div>
+                  <div class="attention">
+                    <%=link_to '⇨ First, make SupermarketList❗️', new_supermarket_path %>
+                  </div>
               <% end %>
-              </div>
+            </div>
 
           </div>
         </div>
