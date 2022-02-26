@@ -16,7 +16,7 @@
 - has_many :items
 - has_many :wants
 - has_many :supermarkets
-- has_many :classifications
+
 
 
 ## items (冷蔵庫にある商品の情報)テーブル
@@ -31,7 +31,7 @@
 
 ### Association
 
-- belongs_to :classification
+
 - belongs_to :user
 
 
@@ -51,18 +51,6 @@
 - belongs_to :supermarket
 
 
-## classifications (カテゴリ毎の情報)
-
-| Column                 | Type       | Options                      |
-|------------------------|------------|----------------------------- |
-| item                   | references | null:false,foreign_key: true |
-
-
-### Association
-
-- has_many   :items
-- belongs_to :user
-
 
 
 ## supermarkets(お気に入りのスーパーを登録する) テーブル
@@ -81,39 +69,3 @@
 - has_many   :wants
 
 
-<!-- ## rooms テーブル
-
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name   | string | null: false |
-
-### Association
-
-- has_many :room_users
-- has_many :users, through: :room_users
-- has_many :messages
-
-## room_users テーブル
-
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| room   | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :room
-- belongs_to :user
-
-## messages テーブル
-
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| content | string     |                                |
-| user    | references | null: false, foreign_key: true |
-| room    | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :room
-- belongs_to :user -->
